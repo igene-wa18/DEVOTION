@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Navratri 🪔</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;900&family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet" />
+
+  <style>
+
+    /* ============================================================
+       RESET
+    ============================================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: #100305;
+      color: #e8d5b0;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
+      line-height: 1.85;
+      overflow-x: hidden;
+    }
+
+    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar-track { background: #100305; }
+    ::-webkit-scrollbar-thumb { background: #d4a017; border-radius: 3px; }
+
+    /* ============================================================
+       HERO
+    ============================================================ */
+ .hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 4rem 6rem;
+  position: relative;
+
+  /* background image */
+  background: 
+    linear-gradient(to right, rgba(16,3,5,0.85) 30%, rgba(16,3,5,0.3) 60%, transparent 100%),
+    url('mata.jpg') center/cover no-repeat;
+      border-bottom: 2px solid transparent;
+      border-image: linear-gradient(90deg, transparent, #d4a017, #e8620a, #d4a017, transparent) 1;
+    }
+
+    /* ---- hero text (left) ---- */
+    .hero-text { flex: 1; max-width: 500px; }
+
+    .hero-text h1 {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 700;
+      color: #f5e6c8;
+      line-height: 1.15;
+      text-shadow: 0 0 25px rgba(212,160,23,0.4);
+      animation: fadeLeft 1s ease both 0.2s;
+    }
+
+    .hero-text h2 {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: clamp(1.1rem, 2.2vw, 1.85rem);
+      font-weight: 400;
+      color: #e8d5b0;
+      margin-top: 0.6rem;
+      animation: fadeLeft 1s ease both 0.4s;
+    }
+
+    .hero-text h2 span {
+      color: #e8620a;
+      font-style: italic;
+      animation: colorShift 3s ease-in-out infinite alternate;
+    }
+
+    @keyframes colorShift {
+      from { color: #e8620a; }
+      to   { color: #f0c040; }
+    }
+
+    .hero-text .tags {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 1.2rem;
+      animation: fadeLeft 1s ease both 0.6s;
+    }
+
+    .hero-text .tags span {
+      font-family: 'Cinzel', serif;
+      font-size: 0.68rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      padding: 0.25rem 0.9rem;
+      border: 1px solid rgba(212,160,23,0.4);
+      border-radius: 20px;
+      color: #d4a017;
+    }
+
+    .hero-text p {
+      margin-top: 1.5rem;
+      font-style: italic;
+      color: #9a7850;
+      font-size: 1rem;
+      border-left: 2px solid rgba(212,160,23,0.4);
+      padding-left: 1.2rem;
+      line-height: 2;
+      animation: fadeLeft 1s ease both 0.8s;
+    }
+
+    .name{
+      position: absolute;
+      bottom: 10px;
+      right: 20px;
+      text-align: center;
+      font-family: 'Cinzel', serif;
+      font-size: 0.85rem;
+      letter-spacing: 0.10em;
+      color :#f0c040;
+      animation: fadeLeft 1s ease both 1s;
+    }
+
+    .name span {
+      color: #e8620a;
+      font-style: italic;
+      animation: colorShift 3s ease-in-out infinite alternate;
+      font-weight: 200;
+    }
+
+    /* ---- hero image (right) ---- */
+
+
+    @keyframes float {
+      0%,100% { transform: translateY(0); }
+      50%      { transform: translateY(-18px); }
+    }
+
+    @keyframes redGlow {
+      from { box-shadow: 0 0 35px rgba(139,0,0,0.6), 0 0 70px rgba(139,0,0,0.2); }
+      to   { box-shadow: 0 0 60px rgba(232,98,10,0.65), 0 0 110px rgba(139,0,0,0.3); }
+    }
+
+    /* ============================================================
+       SECTION TITLE
+    ============================================================ */
+    .section-title {
+      text-align: center;
+      padding: 5rem 2rem 3rem;
+    }
+
+    .section-title h2 {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(1.3rem, 2.8vw, 2rem);
+      font-weight: 600;
+      color: #d4a017;
+      letter-spacing: 0.08em;
+    }
+
+    .section-title h2::before { content: '❈  '; color: #e8620a; }
+    .section-title h2::after  { content: '  ❈'; color: #e8620a; }
+
+    .section-title hr {
+      width: 200px;
+      margin: 1.2rem auto 0;
+      border: none;
+      border-top: 1px solid rgba(212,160,23,0.4);
+    }
+
+    /* ============================================================
+       GODDESS CARDS
+    ============================================================ */
+    .goddess-grid {
+      max-width: 1150px;
+      margin: 0 auto;
+      padding: 0 2rem 6rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+    }
+
+    /* Base card — image on LEFT, text on RIGHT — always visible */
+    .card {
+      display: grid;
+      grid-template-columns: 340px 1fr;
+      background: linear-gradient(135deg, #180508 0%, #0d0304 100%);
+      border: 1px solid rgba(212,160,23,0.2);
+      border-radius: 6px;
+      overflow: hidden;
+      box-shadow: 0 6px 50px rgba(0,0,0,0.7);
+      opacity: 1;
+    }
+
+    /* Reversed card — text on LEFT, image on RIGHT */
+    .card.rev {
+      grid-template-columns: 1fr 340px;
+    }
+
+    /* ---- Image column ---- */
+    .card-img {
+      position: relative;
+      overflow: hidden;
+      min-height: 380px;
+    }
+
+    .card-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    .card:hover .card-img img {
+      transform: scale(1.06);
+    }
+
+    /* For normal card: shadow fades to right toward text */
+    .card-img::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, transparent 60%, #0d0304 100%);
+      pointer-events: none;
+    }
+
+    /* For reversed card: shadow fades to left */
+    .card.rev .card-img::after {
+      background: linear-gradient(to left, transparent 60%, #0d0304 100%);
+    }
+
+    /* In reversed card the image column goes to the right — move it */
+    .card.rev .card-img {
+      order: 2;
+    }
+    .card.rev .card-text {
+      order: 1;
+    }
+
+    /* ---- Text column ---- */
+    .card-text {
+      padding: 2.5rem 2.8rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+
+    .card-text .badge {
+      display: inline-block;
+      font-family: 'Cinzel', serif;
+      font-size: 0.6rem;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: #100305;
+      background: linear-gradient(90deg, #e8620a, #d4a017);
+      padding: 0.22rem 0.9rem;
+      border-radius: 20px;
+      margin-bottom: 0.3rem;
+      width: fit-content;
+    }
+
+    .card-text h3 {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: clamp(1.1rem, 1.8vw, 1.65rem);
+      font-weight: 700;
+      color: #f5e6c8;
+      line-height: 1.2;
+      text-shadow: 0 0 18px rgba(212,160,23,0.25);
+    }
+
+    .card-text .subtitle {
+      font-style: italic;
+      color: #e8620a;
+      font-size: 0.92rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .card-text .quote {
+      font-style: italic;
+      color: #d4a017;
+      font-size: 0.95rem;
+      border-left: 2px solid rgba(212,160,23,0.45);
+      padding: 0.45rem 1rem;
+      background: rgba(212,160,23,0.04);
+      border-radius: 0 4px 4px 0;
+    }
+
+    .card-text h4 {
+      font-family: 'Cinzel', serif;
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: #e8620a;
+      margin-top: 0.7rem;
+      padding-bottom: 0.2rem;
+      border-bottom: 1px solid rgba(232,98,10,0.2);
+    }
+
+    .card-text p {
+      font-size: 0.96rem;
+      color: #e8d5b0;
+      line-height: 1.85;
+    }
+
+    /* ============================================================
+       FOOTER
+    ============================================================ */
+    .footer {
+      text-align: center;
+      padding: 3rem 2rem 5rem;
+      font-family: 'Cinzel', serif;
+      font-size: 0.85rem;
+      letter-spacing: 0.25em;
+      color: #5a3820;
+    }
+
+    .footer::before {
+      content: '';
+      display: block;
+      width: 140px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #d4a017, transparent);
+      margin: 0 auto 1.5rem;
+    }
+
+    /* ============================================================
+       KEYFRAMES
+    ============================================================ */
+    @keyframes fadeLeft {
+      from { opacity: 0; transform: translateX(-30px); }
+      to   { opacity: 1; transform: translateX(0); }
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ============================================================
+       RESPONSIVE
+    ============================================================ */
+    @media (max-width: 860px) {
+      .hero {
+        flex-direction: column-reverse;
+        padding: 3rem 2rem;
+        gap: 2.5rem;
+        text-align: center;
+      }
+      .hero-text .tags { justify-content: center; }
+      .hero-img img { width: 240px; height: 320px; }
+
+      .card,
+      .card.rev {
+        grid-template-columns: 1fr;
+      }
+      .card.rev .card-img,
+      .card.rev .card-text { order: unset; }
+      .card-img { min-height: 260px; }
+      .card-text { padding: 1.8rem 1.5rem; }
+    }
+
+    @media (max-width: 500px) {
+      .hero-img img { width: 200px; height: 270px; }
+      .card-text h3  { font-size: 1.1rem; }
+      .card-text     { padding: 1.4rem 1.2rem; }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- ══════════════════ HERO ══════════════════ -->
+  <section class="hero">
+
+    <div class="hero-text">
+      <h1>HAPPY NAVRATRI</h1>
+      <h2>the festival of <span>SHAKTI</span></h2>
+      <div class="tags">
+        <span>BLESSING</span>
+        <span>DEVOTION</span>
+        <span>LOVE</span>
+      </div>
+      <p>
+        May the divine blessings of Maa Durga<br>
+        fill your life with joy, strength, and prosperity.<br>
+        Wishing you a Navratri full of devotion,<br>
+        spiritual growth, and vibrant celebrations.
+      </p>
+    </div>
+
+    <div class="hero-img">
+    <div class = "name">
+      <h1>✦ &nbsp; created by :<span> RAMESH KUMAR</span>&nbsp; ✦</h1>
+    </div>
+  </section>
+
+  <!-- ══════════════════ SECTION TITLE ══════════════════ -->
+  <div class="section-title">
+    <h2>The Nine Divine Forms of Mata</h2>
+    <hr />
+  </div>
+
+  <!-- ══════════════════ GODDESS CARDS ══════════════════ -->
+  <div class="goddess-grid">
+
+    <!-- Card 1 — IMG LEFT · TEXT RIGHT -->
+    <div class="card">
+      <div class="card-img">
+        <img src="https://i.pinimg.com/736x/b6/76/8d/b6768d7816ec48264481e0cb6d715e24.jpg" alt="Maa Shailputri" />
+      </div>
+      <div class="card-text">
+        <span class="badge">Day 1</span>
+        <h3>Maa Shailputri</h3>
+        <p class="subtitle">– Daughter of the mountains; beginning of life and purity.</p>
+        <p class="quote">She is the source of all divine energy — Shakti in its purest form.</p>
+        <h4>Iconography</h4>
+        <p>Rides a white bull (Nandi). Holds a Trishul 🔱 and lotus. A crescent moon adorns her forehead signifying spiritual balance.</p>
+        <h4>Symbolises</h4>
+        <p>Strength, courage, peace, and protection. She embodies purity, devotion, and the power to overcome adversity.</p>
+      </div>
+    </div>
+
+    <!-- Card 2 — TEXT LEFT · IMG RIGHT -->
+    <div class="card rev">
+      <div class="card-img">
+        <img src="https://i.pinimg.com/736x/0c/c8/64/0cc864ee7766e27658066d9918a67bf2.jpg" alt="Maa Brahmacharini" />
+      </div>
+      <div class="card-text">
+        <span class="badge">Day 2</span>
+        <h3>Maa Brahmacharini</h3>
+        <p class="subtitle">– Embodiment of penance, knowledge, and spiritual discipline.</p>
+        <p class="quote">Walking barefoot with a rosary, she shows the path of truth and devotion.</p>
+        <h4>Iconography</h4>
+        <p>Wears a pure white sari. Walks barefoot (humility). Holds a japa mala and kamandal — symbols of discipline.</p>
+        <h4>Symbolises</h4>
+        <p>Devotion, wisdom, patience, emotional balance, and inner strength through spiritual practice.</p>
+      </div>
+    </div>
+
+    <!-- Card 3 — IMG LEFT · TEXT RIGHT -->
+    <div class="card">
+      <div class="card-img">
+        <img src="https://i.pinimg.com/736x/8f/37/22/8f3722a000c81b8557013182365c0280.jpg" alt="Maa Chandraghanta" />
+      </div>
+      <div class="card-text">
+        <span class="badge">Day 3</span>
+        <h3>Maa Chandraghanta</h3>
+        <p class="subtitle">– Fierce warrior; crescent moon like a bell; destroyer of evil.</p>
+        <p class="quote">The sound of her bell banishes darkness and fills the world with divine energy.</p>
+        <h4>Iconography</h4>
+        <p>Rides a lion 🦁. Has 10 hands — trident, sword, bow, arrow, lotus. One hand always in Abhaya mudra (blessing).</p>
+        <h4>Symbolises</h4>
+        <p>Bravery, removal of negativity and fear — balance between calmness and power.</p>
+      </div>
+    </div>
+
+    <!-- Card 4 — TEXT LEFT · IMG RIGHT -->
+    <div class="card rev">
+      <div class="card-img">
+        <img src="https://i.pinimg.com/736x/06/cd/a2/06cda2d57598a51ddd75bb01308a3665.jpg" alt="Maa Kushmanda" />
+      </div>
+      <div class="card-text">
+        <span class="badge">Day 4</span>
+        <h3>Maa Kushmanda</h3>
+        <p class="subtitle">– Creator of the universe; cosmic energy and warmth like the sun.</p>
+        <p class="quote">She created the universe with her divine smile — a single beam of cosmic light.</p>
+        <h4>Iconography</h4>
+        <p>Rides a lion 🦁. Has 8 hands — kamandal, bow, arrow, lotus, amrit kalash, chakra, gada, jap mala.</p>
+        <h4>Significance</h4>
+        <p>Represents creation, energy, and vitality. Destroys darkness and fills life with positivity.</p>
+      </div>
+    </div>
+
+    <!-- Card 5 — IMG LEFT · TEXT RIGHT -->
+    <div class="card">
+      <div class="card-img">
+        <img src="https://i.pinimg.com/736x/4f/0e/1f/4f0e1f68d08bb8f9ab4313855445efa0.jpg" alt="Maa Skandamata" />
+      </div>
+      <div class="card-text">
+        <span class="badge">Day 5</span>
+        <h3>Maa Skandamata</h3>
+        <p class="subtitle">– Mother of Lord Skanda (Kartikeya); protective motherhood.</p>
+        <p class="quote">Her love for Kartikeya is the purest form of unconditional divine devotion.</p>
+        <h4>Iconography</h4>
+        <p>Rides a lion 🦁. Holds Lord Kartikeya in her lap and a lotus 🌸 in two hands. One hand in blessing posture.</p>
+        <h4>Symbolises</h4>
+        <p>Motherly love, purity, devotion — removal of ignorance and the blessing of wisdom (Moksha).</p>
+      </div>
+    </div>
+
+    <!-- Card 6 — TEXT LEFT · IMG RIGHT -->
+    <div class="card rev">
+      <div class="card-img">
+        <img src="https://i.pinimg.com/736x/18/98/7a/18987a4aaee252dd7149ba3c01ca4dfe.jpg" alt="Maa Katyayani" />
+      </div>
+      <div class="card-text">
+        <span class="badge">Day 6</span>
+        <h3>Maa Katyayani</h3>
+        <p class="subtitle">– Warrior goddess; daughter of Sage Katyayana; slayer of demons.</p>
+        <p class="quote">Born from the combined wrath of all gods — the ultimate force of righteousness.</p>
+        <h4>Iconography</h4>
+        <p>Rides a lion 🦁. Four hands — sword, lotus, Abhaya mudra (protection), Varsha mudra (wish-granting).</p>
+        <h4>Symbolises</h4>
+        <p>Courage, destruction of evil, justice, and righteousness. The warrior face of divine feminine energy.</p>
+      </div>
+    </div>
+
+    <!-- Card 7 — IMG LEFT · TEXT RIGHT -->
+    <div class="card">
+      <div class="card-img">
+        <img src="https://i.pinimg.com/736x/9f/0d/e9/9f0de9126b903eb4c65d431db31ded44.jpg" alt="Maa Kaalratri" />
+      </div>
+      <div class="card-text">
+        <span class="badge">Day 7</span>
+        <h3>Maa Kaalratri</h3>
+        <p class="subtitle">– Fearsome dark form; destroys ignorance and all evil forces.</p>
+        <p class="quote">She is called "Shubhankari" — the fierce one who ultimately brings only good.</p>
+        <h4>Iconography</h4>
+        <p>Rides a donkey 🐴. Dark complexion (infinite cosmos). Holds a sword and iron hook. Hands in Abhaya and Varda mudra.</p>
+        <h4>Symbolises</h4>
+        <p>Destruction of evil, fearlessness, and end of darkness. Despite her fierce form she brings auspiciousness.</p>
+      </div>
+    </div>
+
+    <!-- Card 8 — TEXT LEFT · IMG RIGHT -->
+    <div class="card rev">
+      <div class="card-img">
+        <img src="https://i.pinimg.com/736x/de/03/27/de03276923ef95bd4a1998f4c7359489.jpg" alt="Maa Mahagauri" />
+      </div>
+      <div class="card-text">
+        <span class="badge">Day 8</span>
+        <h3>Maa Mahagauri</h3>
+        <p class="subtitle">– Symbol of purity, peace, and beauty; inner cleansing and calmness.</p>
+        <p class="quote">Her radiance illuminates all the three worlds with divine purity and grace.</p>
+        <h4>Iconography</h4>
+        <p>Rides a white bull 🐂. Holds Trishul 🔱 and Damru. Four hands in Abhaya mudra and Varada mudra.</p>
+        <h4>Symbolises</h4>
+        <p>Purity, simplicity, peace — removal of past sins and spiritual growth with clarity of heart.</p>
+      </div>
+    </div>
+
+    <!-- Card 9 — IMG LEFT · TEXT RIGHT -->
+    <div class="card">
+      <div class="card-img">
+        <img src="https://i.pinimg.com/736x/c3/10/3d/c3103d495a16d2f9c349cb403fec1824.jpg" alt="Maa Siddhidatri" />
+      </div>
+      <div class="card-text">
+        <span class="badge">Day 9</span>
+        <h3>Maa Siddhidatri</h3>
+        <p class="subtitle">– Bestower of all supernatural powers; the final perfect form of Durga.</p>
+        <p class="quote">She grants the eight siddhis — completing every devotee's spiritual journey.</p>
+        <h4>Iconography</h4>
+        <p>Seated on a lotus 🌸 or rides a lion 🦁. Holds chakra, gada, shankha, and lotus. Calm, divine, and graceful.</p>
+        <h4>Symbolises</h4>
+        <p>Spiritual power, enlightenment, fulfillment, perfection, and divine wisdom. The ultimate blessing of Navratri.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ══════════════════ FOOTER ══════════════════ -->
+  <div class="footer">✦ &nbsp; Jai Maa Durga &nbsp; ✦</div>
+
+</body>
+</html>
